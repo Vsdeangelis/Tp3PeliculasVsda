@@ -1,10 +1,10 @@
 package com.example.tp3peliculasvsda;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.tp3peliculasvsda.Modelo.Pelicula;
 
@@ -20,6 +20,7 @@ public class DetalleActivity extends AppCompatActivity {
 
         inicializar();
         laPeli=(Pelicula) getIntent().getExtras().getSerializable("itemsPelis");
+        ///ivFoto.setImageResource(laPeli.getFoto());
         ObtenerDatos();
     }
     public void inicializar(){
@@ -30,6 +31,5 @@ public class DetalleActivity extends AppCompatActivity {
     public void ObtenerDatos(){
         tvTitulo.setText(laPeli.getTitulo());
         tvDetalle.setText(laPeli.getResenia());
-        ivFoto.setImageResource(laPeli.getFoto());
     }
 }

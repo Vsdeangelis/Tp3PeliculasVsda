@@ -15,7 +15,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.tp3peliculasvsda.Modelo.Pelicula;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 
 public class PeliculaAdapter extends RecyclerView.Adapter<PeliculaAdapter.ViewHolder>{
@@ -43,16 +42,15 @@ public class PeliculaAdapter extends RecyclerView.Adapter<PeliculaAdapter.ViewHo
         holder.tvTitulo.setText(miPeli.get(position).getTitulo());
         holder.tvResenia.setText(miPeli.get(position).getResenia());
         holder.ivFoto.setImageResource(miPeli.get(position).getFoto());
-
-        final Pelicula item = miPeli.get(position);
+        final Pelicula peliculasItems = miPeli.get(position);
         holder.btDetalle.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
-                Intent i = new Intent(holder.btDetalle.getContext(), DetalleActivity.class);
-                i.putExtra("itemPelis", String.valueOf(item));
-                holder.btDetalle.getContext().startActivity(i);
+                Intent in = new Intent(holder.btDetalle.getContext(), DetalleActivity.class);
+                in.putExtra("itemPelis", peliculasItems);
+                holder.btDetalle.getContext().startActivity(in);
             }
         });
     }

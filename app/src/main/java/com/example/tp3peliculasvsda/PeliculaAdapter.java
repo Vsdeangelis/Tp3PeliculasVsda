@@ -2,7 +2,6 @@ package com.example.tp3peliculasvsda;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,61 +16,67 @@ import com.example.tp3peliculasvsda.Modelo.Pelicula;
 
 import java.util.ArrayList;
 
-public class PeliculaAdapter extends RecyclerView.Adapter<PeliculaAdapter.ViewHolder>{
-    private ArrayList<Pelicula> miPeli;
+public class PeliculaAdapter extends RecyclerView.Adapter<PeliculaAdapter.ViewHolder>
+{
+    private ArrayList<Pelicula> peliculas;
     private Context context;
-    private LayoutInflater li;
+    private LayoutInflater layoutInflater;
 
-    public PeliculaAdapter(ArrayList<Pelicula> miPeli, Context context, LayoutInflater li) {
-        this.miPeli = miPeli;
+    public PeliculaAdapter(ArrayList<Pelicula> peliculas, Context context, LayoutInflater layoutInflater)
+    {
+        this.peliculas = peliculas;
         this.context = context;
-        this.li = li;
+        this.layoutInflater = layoutInflater;
     }
 
     @NonNull
     @Override
-    ///Referencia a la vista item y se lo pasa a ViewHolder
-    public PeliculaAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view= li.inflate(R.layout.item_pelicula, parent, false);
+    public PeliculaAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
+    {
+        View view = layoutInflater.inflate(R.layout.item_pelicula, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
-    ///se ejecuta por cada item de la lista
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.tvTitulo.setText(miPeli.get(position).getTitulo());
-        holder.tvResenia.setText(miPeli.get(position).getResenia());
-        holder.ivFoto.setImageResource(miPeli.get(position).getFoto());
-        final Pelicula peliculasItems = miPeli.get(position);
-        holder.btDetalle.setOnClickListener(new View.OnClickListener()
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position)
+    {
+        holder.txtTitulo.setText(peliculas.get(position).getTitulo());
+        holder.ivPortada.setImageResource(peliculas.get(position).getFoto());
+        holder.txtResenia.setText(peliculas.get(position).getResenia());
+
+        final Pelicula peliculasItems = peliculas.get(position);
+        holder.btnDetalle.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
-                Intent in = new Intent(holder.btDetalle.getContext(), DetalleActivity.class);
+                Intent in = new Intent(holder.btnDetalle.getContext(), DetalleActivity.class);
                 in.putExtra("itemPelis", peliculasItems);
-                holder.btDetalle.getContext().startActivity(in);
+                holder.btnDetalle.getContext().startActivity(in);
             }
         });
+
     }
 
     @Override
-    public int getItemCount() {
-        return miPeli.size();
+    public int getItemCount()
+    {
+        return peliculas.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
-        private TextView tvTitulo, tvResenia;
-        private ImageView ivFoto;
-        private Button btDetalle;
+    public class ViewHolder extends RecyclerView.ViewHolder
+    {
+        private TextView txtTitulo, txtResenia;
+        private ImageView ivPortada;
+        private Button btnDetalle;
 
-        public ViewHolder(@NonNull View itemView) {
+        public ViewHolder(@NonNull View itemView)
+        {
             super(itemView);
-            tvTitulo= itemView.findViewById(R.id.tvTitulo);
-            tvResenia=itemView.findViewById(R.id.tvResenia);
-            ivFoto=itemView.findViewById(R.id.ivFoto);
-            btDetalle=itemView.findViewById(R.id.btDetalle);
+            txtTitulo = itemView.findViewById(R.id.tvTitulo);
+            txtResenia = itemView.findViewById(R.id.tvResenia);
+            ivPortada = itemView.findViewById(R.id.ivFoto);
+            btnDetalle = itemView.findViewById(R.id.btnDetalle);
         }
-
     }
 }

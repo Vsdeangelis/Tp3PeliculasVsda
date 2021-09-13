@@ -9,9 +9,9 @@ import android.widget.TextView;
 import com.example.tp3peliculasvsda.Modelo.Pelicula;
 
 public class DetalleActivity extends AppCompatActivity {
-    private TextView tvTitulo, tvDetalle;
-    private ImageView ivFoto;
-    private Pelicula laPeli;
+    private TextView tvTitulo2, tvDetalle2;
+    private ImageView ivFoto2;
+    private Pelicula pelicula;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,17 +19,18 @@ public class DetalleActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detalle);
 
         inicializar();
-        laPeli=(Pelicula) getIntent().getExtras().getSerializable("itemsPelis");
-        ///ivFoto.setImageResource(laPeli.getFoto());
+        pelicula= (Pelicula) getIntent().getExtras().getSerializable("itemPelis");
+        ivFoto2.setImageResource(pelicula.getFoto());
         ObtenerDatos();
     }
     public void inicializar(){
-        tvTitulo=findViewById(R.id.tvTitulo);
-        tvDetalle= findViewById(R.id.btDetalle);
-        ivFoto= findViewById(R.id.ivFoto);
+        tvTitulo2=findViewById(R.id.tvTitulo2);
+        tvDetalle2= findViewById(R.id.tvDetalle2);
+        ivFoto2= findViewById(R.id.ivFoto2);
     }
     public void ObtenerDatos(){
-        tvTitulo.setText(laPeli.getTitulo());
-        tvDetalle.setText(laPeli.getResenia());
+
+        tvTitulo2.setText("Titulo: "+pelicula.getTitulo()+"\nDirector: "+pelicula.getDirector());
+        tvDetalle2.setText(pelicula.getResenia()+ "\nActores: "+pelicula.getActor());
     }
 }

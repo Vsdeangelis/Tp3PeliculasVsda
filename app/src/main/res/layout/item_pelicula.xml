@@ -22,8 +22,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.333"
-            tools:ignore="ImageContrastCheck" />
+            app:layout_constraintVertical_bias="0.333" />
 
         <TextView
             android:id="@+id/tvTitulo"
@@ -39,7 +38,7 @@
             android:id="@+id/tvResenia"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toTopOf="@+id/btDetalle"
+            app:layout_constraintBottom_toTopOf="@+id/btnDetalle"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.504"
             app:layout_constraintStart_toStartOf="parent"
@@ -47,7 +46,7 @@
             app:layout_constraintVertical_bias="0.096" />
 
         <Button
-            android:id="@+id/btDetalle"
+            android:id="@+id/btnDetalle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Detalle"

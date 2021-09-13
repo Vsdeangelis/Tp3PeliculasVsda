@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
                         " debe enfrentarse a un pasado que él creía " +
                         "haber dejado atrás cuando se ve atrapado en " +
                         "la red de la misteriosa organización de los " +
-                        "Diez Anillos."));
+                        "Diez Anillos.", "Simu Liu, Awkwafina, Meng'er Zhang", "Destin Daniel Cretton"));
         miLista.add(new Pelicula(R.drawable.peli2, "RON DA ERROR",
                 "Cuenta la historia de Barney, un estudiante de secundaria " +
                         "poco popular y de Ron, su nuevo dispositivo andante y " +
@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
                         "errores de Ron, con el telón de fondo de la era de las redes sociales, " +
                         "les embarcarán en un viaje lleno de aventuras en el que el " +
                         "chico y el robot experimentarán lo compleja y maravillosa que puede " +
-                        "llegar a ser una verdadera amistad."));
+                        "llegar a ser una verdadera amistad.", "Barney", "20th Century Studios y Locksmith Animation"));
         miLista.add(new Pelicula(R.drawable.peli3, "Encanto", "nos narra la" +
                 " historia de una familia extraordinaria, los Madrigal, que vive oculta en " +
                 "las montañas de Colombia en una casa mágica, en un pueblo vibrante de un " +
@@ -54,11 +54,11 @@ public class MainActivity extends AppCompatActivity {
                 " hasta poderes curativos. A todos menos a Mirabel. Pero cuando descubre que " +
                 "la magia que rodea Encanto está en peligro, Mirabel decide que ella, la " +
                 "única Madrigal normal y corriente, quizá sea la última esperanza de su " +
-                "extraordinaria familia."));
+                "extraordinaria familia.", "Lin-Manuel Miranda", "Byron Howard y Jared Bush"));
         miLista.add(new Pelicula(R.drawable.peli4, "Eternals", " La historia épica," +
                 " que abarca miles de años, presenta a un grupo de héroes inmortales que se ve " +
                 "obligado a salir de las sombras para reunirse contra el enemigo más antiguo de la " +
-                "humanidad: los Desviantes."));
+                "humanidad: los Desviantes.", "Richard Madden, Gemma Chan, Kumail Nanjiani y Lauren Ridloff", " Marvel Studios"));
         return miLista;
 
     }
